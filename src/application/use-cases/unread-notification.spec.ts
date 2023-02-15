@@ -20,7 +20,7 @@ describe('Unread notification', () => {
       notificationId: notification.id,
     });
 
-    expect(notificationsRepository.notifications[0].readAt).toBeNull;
+    expect(notificationsRepository.notifications[0].readAt).toBeNull();
   });
 
   it('should not be able to unread a non existing notification', async () => {
