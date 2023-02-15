@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Notification } from 'src/application/entities/notification';
-import { NotificationsRepository } from 'src/application/repositories/notifications-repository';
+import { Notification } from '../../../../application/entities/notification';
+import { NotificationsRepository } from '../../../../application/repositories/notifications-repository';
 import { PrismaNotificationMapper } from '../mappers/prisma-notification-mapper';
 import { PrismaService } from '../prisma.service';
 
@@ -31,7 +31,7 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
   async save(notification: Notification): Promise<void> {
     const raw = PrismaNotificationMapper.toPrisma(notification);
 
-    await this.prisma.notification.update({
+    await this.prisma.notification.updateMany({
       where: {
         id: raw.id,
       },

@@ -1,6 +1,6 @@
-import { GetRecipientNotifications } from './../../application/use-cases/get-recipient-notifications';
 import { Module } from '@nestjs/common';
 import { DatabaseModule } from '../database/database.module';
+import { GetRecipientNotifications } from './../../application/use-cases/get-recipient-notifications';
 import { NotificationsController } from './controllers/notifications.controller';
 import { SendNotification } from './../../application/use-cases/send-notification';
 import { CancelNotification } from './../../application/use-cases/cancel-notification';
