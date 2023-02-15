@@ -4,8 +4,8 @@ import { InMemoryNotificationsRepository } from './../../../test/repositories/in
 import { NotificationNotFound } from './errors/notification-not-found';
 import { ReadNotification } from './read-notification';
 
-describe('Cancel notification', () => {
-  it('should be able to cancel a notification', async () => {
+describe('Read notification', () => {
+  it('should be able to read a notification', async () => {
     const notificationsRepository = new InMemoryNotificationsRepository();
     const readNotification = new ReadNotification(notificationsRepository);
 
@@ -26,7 +26,7 @@ describe('Cancel notification', () => {
     );
   });
 
-  it('should not be able to cancel a non existing notification', async () => {
+  it('should not be able to read a non existing notification', async () => {
     const notificationsRepository = new InMemoryNotificationsRepository();
     const readNotification = new ReadNotification(notificationsRepository);
 
